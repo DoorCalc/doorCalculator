@@ -1,0 +1,78 @@
+#form-calc-cost{
+    text-align: center;
+    /*padding: 250px;*/
+    width:333px;
+    margin: 100px auto;
+}
+label{
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    color: #8B008B;
+    height: 10px;
+    text-align: left;
+}
+#select-doorSize {
+    width: 100%;
+    min-width: 15ch;
+    max-width: 30ch;
+    border: 1px solid;
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    font-size: 1.25rem;
+    cursor: pointer;
+    line-height: 1.1;
+    background-color: #fff;
+    background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+    align-items: center;
+    position: relative;
+    background-color: #eee;
+    background-image: linear-gradient(to top, #ddd, #eee 33%);
+}
+#select-lock {
+    width: 100%;
+    min-width: 15ch;
+    max-width: 30ch;
+    border: 1px solid;
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    font-size: 1.25rem;
+    cursor: pointer;
+    line-height: 1.1;
+    background-color: #fff;
+    background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+    align-items: center;
+    position: relative;
+    background-color: #eee;
+    background-image: linear-gradient(to top, #ddd, #eee 33%);
+}
+#selectel-color {
+    width: 100%;
+    min-width: 15ch;
+    max-width: 30ch;
+    border: 1px solid;
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    font-size: 1.25rem;
+    cursor: pointer;
+    line-height: 1.1;
+    background-color: #fff;
+    background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+    align-items: center;
+    position: relative;
+    background-color: #eee;
+    background-image: linear-gradient(to top, #ddd, #eee 33%);
+}
+#cost-calculate {
+    width: 10%;
+    min-width: 15ch;
+    max-width: 30ch;
+    border: 1px solid;
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    font-size: 1.25rem;
+    cursor: pointer;
+    line-height: 1.1;
+    background-color: #31b58e;
+    margin: 20px auto;
+}
