@@ -3,8 +3,9 @@ import mongoose from 'mongoose';
 
 const PORT = 5554;
 const app = express();
-const DB_URL = 'mongodb://unoi4ama7pdnvv8954b3:1rRh6tdQFJ6wJIxiimHQ@n1-c2-mongodb-clevercloud-customers.services.clever-cloud.com:27017,n2-c2-mongodb-clevercloud-customers.services.clever-cloud.com:27017/btk2faugwkf47cb?replicaSet=rs0';
-
+const DB_USER_NAME = 'unoi4ama7pdnvv8954b3';
+const DB_USER_PASS = '1rRh6tdQFJ6wJIxiimHQ';
+const DB_URL = 'mongodb://'+ DB_USER_NAME + ':' + DB_USER_PASS +'@n1-c2-mongodb-clevercloud-customers.services.clever-cloud.com:27017,n2-c2-mongodb-clevercloud-customers.services.clever-cloud.com:27017/btk2faugwkf47cb?replicaSet=rs0';
 app.use(express.json());
 
 app.get('/', (request, response) => {
