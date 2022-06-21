@@ -15,7 +15,7 @@ app.use(express.static(path.resolve(__dirname, 'static')));
 app.use(express.static(path.resolve(__dirname, 'js')));
 
 app.get('/', (request, response) => {
-    response.status(200).json('Сервер вернул ответ от nodemon');
+    response.sendFile(path.resolve(__dirname, 'static', 'doorCalculator.html'));
 });
 
 app.get('/home', (request, response) => {
