@@ -1,6 +1,6 @@
-import {searchInJsonObj, getCatalog} from './model/data.js'
-import {fillSelects} from './util/filler-dom-data.js';
-import {positionAt} from "./util/utils.js";
+import {searchInJsonObj, getCatalog} from '../model/data.js'
+import {fillSelects} from '../util/filler-dom-data.js';
+import {positionAt} from "../util/utils.js";
 
 const catalog = getCatalog();
 

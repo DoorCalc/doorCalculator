@@ -121,6 +121,39 @@ const getJsonData = function(url, filter, getResponseResult) {
         });
 };
 
+function fillTextWindow(){
+
+    const text = document.querySelector('#content-text');
+    const btn = document.querySelector("#over-height-div");
+    text.style.cssText = 'width: 300px; height: 200px; border: 25px solid #E8C48F; padding: 20px; overflow: auto; left: 180px; top: 180px';
+    text.style.color = 'rgb(200,100,100)';
+
+    btn.addEventListener('click', (evt) => {
+        /**
+         * evt - объект-событие, к которому можно обратиться после соверш. соб., чтобы, например, получить координаты
+         * нажатия на кнопку. (evt.clientX, evt.clientY)
+         */
+        if (btn.innerText === 'Расскрыть') {
+            text.style.height = `${text.scrollHeight}px`;
+            btn.innerText = 'Закрыть';
+        } else {
+            text.style.height = '200px';
+            btn.innerText = 'Расскрыть';
+        }
+    });
+
+    const hiddenBtn = (element) => {
+        return () => element.hidden = 'true';
+    };
+
+    btn.addEventListener('click', hiddenBtn(btn));
+    text.querySelector('#content-text p')
+        .addEventListener('click', () => {
+            btn.removeEventListener('click', hiddenBtn(btn));
+            btn.hidden = '';
+        });
+}
+
 
 getJsonData(
     'https://www.bani.ru/products/api/cities/top/?limit=100&',
