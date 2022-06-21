@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 
-const PORT = 5554;
+const PORT = 8080;
 const app = express();
 const DB_USER_NAME = 'unoi4ama7pdnvv8954b3';
 const DB_USER_PASS = '1rRh6tdQFJ6wJIxiimHQ';
@@ -14,8 +14,8 @@ app.get('/', (request, response) => {
 
 async function startApp(){
     try {
-        let newVar = await mongoose.connect(DB_URL);
-        app.listen(PORT, ()=> console.log('SERVER STARTED ON PORT: ' + PORT));
+        await mongoose.connect(DB_URL);
+        app.listen(PORT, '0.0.0.0');
     } catch (e) {
         console.log(e);
     }
