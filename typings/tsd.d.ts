@@ -13,8 +13,8 @@ export interface IApiResponse{
 // Пример использования в другом файле:
 
 /**
- * @param {import("./main").ICreditNoteTaxRequestViewModel} req
- * @returns {Promise<import("./main").IApiResponse>}
+ * @param {import("./pages").ICreditNoteTaxRequestViewModel} req
+ * @returns {Promise<import("./pages").IApiResponse>}
  */
 // function createCreditNoteTaxApiCall(req) {
 //     /// некие действия

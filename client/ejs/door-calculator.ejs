@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <script type="module" src="../pages/doorCostCulc.js"></script>
+</head>
+<body>
+    <%- include('./partials/nav-bar-template'); %>
+    <div id="form-calc-cost">
+        <!--    <form action="/culculate" method="post">-->
+        <label for="select-lock">Выберите замок</label><br>
+        <select id="select-lock"></select>
+        <br>
+        <label for="select-doorSize">Выберите размер двери</label><br>
+        <select id="select-doorSize"></select>
+        <br>
+        <label for="selectel-color">Выберите цвет двери</label><br>
+        <select id="selectel-color"></select>
+        <div>
+            <input id="cost-calculate" type="submit" value="Рассчитать">
+        </div>
+        <!--    </form>-->
+    </div>
+</body>
+</html>

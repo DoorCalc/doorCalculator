@@ -1,4 +1,4 @@
-import {searchInJsonObj, getCatalog} from '../model/data.js'
+import {searchInJsonObj, getCatalog} from '../testModel/data.js'
 import {fillSelects} from '../util/filler-dom-data.js';
 import {positionAt} from "../util/utils.js";
 
