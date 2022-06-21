@@ -1,12 +1,12 @@
-import pkg from 'jsonwebtoken';
-const {jwt} = pkg;
+import pkgSign from 'jsonwebtoken';
 import {jwt_access_secret, jwt_refresh_secret} from "../configs/db-config.js";
 import {tokenModel} from '../model/token-model.js';
+const {sign} = pkgSign;
 
 class TokenService {
     generateToken(payload) {
-        const accessToken = jwt.sign(payload, jwt_access_secret, {expiresIn: '30m'});
-        const refreshToken = jwt.sign(payload, jwt_refresh_secret, {expiresIn: '30d'});
+        const accessToken = sign(payload, jwt_access_secret, {expiresIn: '30m'});
+        const refreshToken = sign(payload, jwt_refresh_secret, {expiresIn: '30d'});
         return {
             accessToken,
             refreshToken
