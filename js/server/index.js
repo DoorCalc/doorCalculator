@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 
-const PORT = 5554;
+const PORT = 80;
 const app = express();
 const DB_USER_NAME = 'unoi4ama7pdnvv8954b3';
 const DB_USER_PASS = '1rRh6tdQFJ6wJIxiimHQ';
