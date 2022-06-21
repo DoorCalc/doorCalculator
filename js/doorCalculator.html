@@ -7,31 +7,6 @@
     <script type="module" src="./doorCostCulc.js"></script>
 </head>
 <body>
-
-            <div id="content-text">
-                <p>
-                    Метрики для не показываемых элементов равны нулю.
-                    Координаты и размеры в JavaScript устанавливаются только для видимых элементов.
-
-                    Если элемент (или любой его родитель) имеет display:none или отсутствует в документе, то все его
-                    метрики
-                    равны нулю (или null, если это offsetParent).
-
-                    Например, свойство offsetParent равно null, а offsetWidth и offsetHeight равны 0, когда мы создали
-                    элемент, но ещё не вставили его в документ, или если у элемента (или у его родителя) display:none.
-
-                    Мы можем использовать это, чтобы делать проверку на видимость:
-
-                    function isHidden(elem) {
-                    return !elem.offsetWidth && !elem.offsetHeight;
-                    }
-                    Заметим, что функция isHidden также вернёт true для элементов, которые в принципе показываются,
-                    но их размеры равны нулю (например, пустые div).
-                </p>
-            </div>
-
-    <button id="over-height-div">Расскрыть</button>
-
     <div id="form-calc-cost">
 <!--    <form action="/culculate" method="post">-->
         <label for="select-lock">Выберите замок</label><br>
