@@ -1,6 +1,7 @@
 {
   "type": "module",
   "name": "ekb",
+  "main": "./js/server/index.js",
   "version": "1.0.0",
   "description": "",
   "devDependencies": {
@@ -19,6 +20,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "mongoose": "^6.4.0"
   }
 }
