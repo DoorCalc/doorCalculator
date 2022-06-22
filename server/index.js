@@ -1,5 +1,4 @@
 import express from 'express';
-import 'dotenv/config'
 import mongoose from 'mongoose';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
@@ -9,7 +8,7 @@ import {host, port} from './configs/server-config.js';
 import {router} from './router/index.js';
 
 const HOST = host;
-const PORT = process.env.PORT ?? port;
+const PORT = port;
 const app = express();
 const __dirname = path.resolve();
 
@@ -53,7 +52,6 @@ app.get('/admin', (request, response) => {
 
 const startApp = async() => {
     try {
-        console.log(db_url);
         await mongoose.connect(db_url);
         app.listen(PORT, HOST);
     } catch (err) {

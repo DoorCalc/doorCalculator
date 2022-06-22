@@ -4,6 +4,7 @@ import {MailService} from '../service/mail-service.js';
 import {TokenService} from '../service/token-service.js';
 import {UserDto} from '../dtos/user-dto.js';
 import {hash} from 'bcrypt';
+import {api_url} from '../configs/db-config.js';
 
 const mailService = new MailService();
 const tokenService = new TokenService();
@@ -18,7 +19,7 @@ class UserService {
         const activationLink = v4();
 
         const user = await userModel.create({email, password: hashPassword});
-        await mailService.sendActivationMail(email, `${process.env.API_URL}/api/activate/${activationLink}`);
+        await mailService.sendActivationMail(email, `${api_url}/api/activate/${activationLink}`);
 
         const userDto = new UserDto(user);
         const tokens = tokenService.generateToken({...userDto});

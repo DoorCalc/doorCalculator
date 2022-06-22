@@ -1,25 +1,29 @@
 import {createTransport} from 'nodemailer';
+import {smtp_host, smtp_port, smtp_user, smtp_password, api_url} from '../configs/db-config.js';
 
 class MailService {
 
     constructor(){
         this.transporter = createTransport({
-            host: process.env.SMTP_HOST,
-            port: process.env.SMTP_PORT,
-            secure: false,
-            ayth: {
-                user:process.env.SMTP_USER,
-                pass:process.env.SMTP_PASSWORD,
+            host: smtp_host,
+            port: smtp_port,
+            secure: true,
+            auth: {
+                user: smtp_user,
+                pass: smtp_password,
+            },
+            tls: {
+                ciphers: 'SSLv3',
             }
         });
     }
 
-    async sendActivationMail(toEmail, link) {
+    async sendActivationMail(to, link) {
         await this.transporter.sendMail({
-            from: process.env.SMTP_USER,
-            toEmail,
-            subject: 'Активация аккаунта на ' + process.env.API_URL,
-            text: '',
+            from: smtp_user,
+            to,
+            subject: 'Активация аккаунта на ' + api_url,
+            text: 'Text',
             html:
                 `<div>
                     <h1>Для активации перейдите по ссылке</h1>
