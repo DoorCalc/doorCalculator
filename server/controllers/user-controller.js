@@ -1,56 +1,58 @@
-import {UserService} from '../service/user-service.js';
+import {UserService, api_url} from '../service/user-service.js';
 
 const userService = new UserService();
 
 class UserController {
-    async registration(req, resp, next){
+    async registration(request, response, next){
         try{
-            const {email, password} = req.body;
+            const {email, password} = request.body;
             const userdata = await userService.registration(email, password);
-            resp.cookie('refreshToken', userdata.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true});
-            return resp.json(userdata);
+            response.cookie('refreshToken', userdata.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true});
+            return await response.json(userdata);
         } catch (err) {
-            console.log(err);
+            next(err);
         }
     }
 
-    async login(req, resp, next){
+    async login(request, response, next){
         try{
 
         } catch (err) {
-            console.log(err);
+            next(err);
         }
     }
 
-    async logout(req, resp, next){
+    async logout(request, response, next){
         try{
 
         } catch (err) {
-            console.log(err);
+            next(err);
         }
     }
 
-    async activate(req, resp, next){
+    async activate(request, response, next){
         try{
-
+            const activationLink = request.params.link;
+            await userService.activate(activationLink);
+            return response.redirect(api_url);
         } catch (err) {
-            console.log(err);
+            next(err);
         }
     }
 
-    async refresh(req, resp, next){
+    async refresh(request, response, next){
         try{
 
         } catch (err) {
-            console.log(err);
+            next(err);
         }
     }
 
-    async getUsers(req, resp, next){
+    async getUsers(request, response, next){
         try{
-            resp.json(['123', '4567']);
+            response.json(['123', '4567']);
         } catch (err) {
-            console.log(err);
+            next(err);
         }
     }
 }

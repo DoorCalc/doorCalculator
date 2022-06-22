@@ -6,6 +6,7 @@ import path from 'path';
 import {db_url} from './configs/db-config.js';
 import {host, port} from './configs/server-config.js';
 import {router} from './router/index.js';
+import {errorMiddleware} from '../server/middlewares/error-widdleware.js';
 
 const HOST = host;
 const PORT = port;
@@ -19,13 +20,7 @@ app.use('/api', router);
 app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, 'client/ejs'));
 app.use(express.static(path.resolve(__dirname, 'client')));
-// app.use("/./*", (request, response) => {
-//     response.redirect('/hg')
-// });
-
-// app.get('/*', (request, response) => {
-//     response.redirect('');
-// });
+app.use(errorMiddleware); // middleware ошибок должен быть в самом конце цепочки подключения через use()
 
 app.get('/', (request, response) => {
     response.render('door-calculator',
