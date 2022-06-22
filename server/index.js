@@ -1,4 +1,5 @@
 import express from 'express';
+import 'dotenv/config'
 import mongoose from 'mongoose';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
@@ -52,6 +53,7 @@ app.get('/admin', (request, response) => {
 
 const startApp = async() => {
     try {
+        console.log(db_url);
         await mongoose.connect(db_url);
         app.listen(PORT, HOST);
     } catch (err) {

@@ -1,4 +1,3 @@
-// import pkgBcrypt from 'bcrypt';
 import {v4} from 'uuid';
 import {userModel} from '../model/user-model.js';
 import {MailService} from '../service/mail-service.js';
@@ -19,7 +18,7 @@ class UserService {
         const activationLink = v4();
 
         const user = await userModel.create({email, password: hashPassword});
-        await mailService.sendActivationMail(email, activationLink);
+        await mailService.sendActivationMail(email, `${process.env.API_URL}/api/activate/${activationLink}`);
 
         const userDto = new UserDto(user);
         const tokens = tokenService.generateToken({...userDto});
